@@ -7,11 +7,11 @@ package body Pulse_Coupled_Networks is
    function Create_State (Rows, Cols : Dimension; Init_Theta : Real) return PCNN_State is
       Result : PCNN_State (Rows, Cols);
    begin
-      Result.F     := (others => (others => 0.0));
-      Result.L     := (others => (others => 0.0));
-      Result.U     := (others => (others => 0.0));
-      Result.Theta := (others => (others => Init_Theta));
-      Result.Y     := (others => (others => False));
+      Result.F     := [others => [others => 0.0]];
+      Result.L     := [others => [others => 0.0]];
+      Result.U     := [others => [others => 0.0]];
+      Result.Theta := [others => [others => Init_Theta]];
+      Result.Y     := [others => [others => False]];
       return Result;
    end Create_State;
 
